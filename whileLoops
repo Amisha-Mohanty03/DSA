@@ -1,0 +1,35 @@
+/*
+Problem: Given a digit d (0 to 9), find the sum of the first 50 positive integers (integers > 0) that end with digit d.
+A number ends with digit d if its last digit is d.
+
+Source- Strivers A2Z DSA Sheet
+Example 1
+Input: d = 1
+Output: 12300
+Explanation:
+The first 50 positive integers ending with 1 are: 1, 11, 21, 31, ..., 491
+Their sum is 12300.
+
+Example 2
+Input: d = 5
+Output: 12500
+*/
+class Solution {
+    public static int whileLoop(int d) {
+
+        int i = 1;
+        int sum = 0;
+        int count = 0;
+
+        while (count < 50) {
+            int c = i % 10;
+            if (c == d) {
+                sum += i;
+                count++;
+            }
+            i++;
+        }
+        return sum;
+    }
+
+}
